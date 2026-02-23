@@ -1,441 +1,695 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Himanshu Dhurve | AI/ML Researcher</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            /* Professional Pastel & Slate Palette */
-            --bg-base: #fcfcfd;
-            --bg-subtle: #f8fafc;
-            --text-main: #1e293b;
-            --text-muted: #64748b;
-            --accent: #6366f1; /* Soft Indigo */
-            --accent-light: #e0e7ff;
-            --border: #e2e8f0;
-            --card-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Himanshu Dhurve</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <style>
+    :root {
+      --beige:     #f5f0e8;
+      --beige-mid: #ede7d9;
+      --beige-drk: #d9d0bf;
+      --ink:       #1c1a17;
+      --ink-soft:  #4a4540;
+      --ink-mute:  #8a8279;
+      --accent:    #2d4a3e;      /* deep forest green — restrained, serious */
+      --accent2:   #7c5c3a;      /* warm brown for hover states */
+      --rule:      #cec8bc;
+      --mono:      'DM Mono', monospace;
+      --serif:     'DM Serif Display', serif;
+      --sans:      'Instrument Sans', sans-serif;
+    }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background: var(--bg-base);
-            color: var(--text-main);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-        }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-        }
+    html { scroll-behavior: smooth; }
 
-        /* Hero Section */
-        header {
-            margin-bottom: 5rem;
-        }
+    body {
+      background: var(--beige);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 15px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
 
-        .profile-label {
-            display: inline-block;
-            padding: 0.25rem 0.75rem;
-            background: var(--accent-light);
-            color: var(--accent);
-            font-size: 0.75rem;
-            font-weight: 600;
-            border-radius: 20px;
-            margin-bottom: 1.5rem;
-            letter-spacing: 0.05em;
-        }
+    /* ── LAYOUT ─────────────────────────────────────────── */
+    .site-wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
 
-        h1 {
-            font-family: 'Outfit', sans-serif;
-            font-size: 3.5rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            margin-bottom: 1rem;
-            color: var(--text-main);
-        }
+    /* ── NAV ─────────────────────────────────────────────── */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem 0 2rem;
+      border-bottom: 1px solid var(--rule);
+    }
 
-        .tagline {
-            font-size: 1.25rem;
-            color: var(--text-muted);
-            max-width: 700px;
-            font-weight: 300;
-        }
+    .nav-name {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      text-decoration: none;
+    }
 
-        .tagline b {
-            color: var(--text-main);
-            font-weight: 500;
-        }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
 
-        /* Links */
-        .social-row {
-            display: flex;
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
+    .nav-links a {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
 
-        .social-link {
-            text-decoration: none;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-            transition: var(--transition);
-        }
+    .nav-links a:hover { color: var(--accent); }
 
-        .social-link:hover {
-            color: var(--accent);
-        }
+    /* ── HERO ─────────────────────────────────────────────── */
+    .hero {
+      padding: 3.5rem 0 3rem;
+      border-bottom: 1px solid var(--rule);
+    }
 
-        /* Section Layout */
-        .section {
-            margin-bottom: 6rem;
-        }
+    .hero-label {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+      margin-bottom: 1.5rem;
+    }
 
-        .section-header {
-            display: flex;
-            align-items: baseline;
-            gap: 1rem;
-            margin-bottom: 2.5rem;
-        }
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(2.8rem, 6vw, 4.8rem);
+      font-weight: 400;
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      margin-bottom: 2rem;
+    }
 
-        .section-title {
-            font-family: 'Outfit', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--text-main);
-        }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--accent);
+    }
 
-        .section-line {
-            flex-grow: 1;
-            height: 1px;
-            background: var(--border);
-        }
+    .hero-bio {
+      max-width: 560px;
+      font-size: 1.05rem;
+      color: var(--ink-soft);
+      line-height: 1.75;
+      margin-bottom: 2.5rem;
+    }
 
-        /* Experience & Education Cards */
-        .grid-list {
-            display: flex;
-            flex-direction: column;
-            gap: 2.5rem;
-        }
+    .hero-links {
+      display: flex;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+    }
 
-        .entry {
-            display: grid;
-            grid-template-columns: 200px 1fr;
-            gap: 2rem;
-        }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.55rem 1.2rem;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 1px solid var(--ink);
+      color: var(--ink);
+      background: transparent;
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
+    }
 
-        .entry-meta {
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            font-weight: 500;
-            padding-top: 0.3rem;
-        }
+    .btn:hover {
+      background: var(--ink);
+      color: var(--beige);
+    }
 
-        .entry-content h3 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 0.25rem;
-        }
+    .btn-fill {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: var(--beige);
+    }
 
-        .entry-content .subheading {
-            color: var(--accent);
-            font-size: 0.95rem;
-            margin-bottom: 0.75rem;
-        }
+    .btn-fill:hover {
+      background: var(--accent2);
+      border-color: var(--accent2);
+      color: var(--beige);
+    }
 
-        .entry-list {
-            list-style: none;
-            padding-left: 0;
-        }
+    /* ── SECTIONS ─────────────────────────────────────────── */
+    section {
+      padding: 2.5rem 0;
+    }
 
-        .entry-list li {
-            position: relative;
-            padding-left: 1.2rem;
-            margin-bottom: 0.5rem;
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
+    .sec-label {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+      margin-bottom: 1.5rem;
+    }
 
-        .entry-list li::before {
-            content: "→";
-            position: absolute;
-            left: 0;
-            color: var(--accent);
-        }
+    /* ── EXPERIENCE ───────────────────────────────────────── */
+    .exp-list { display: flex; flex-direction: column; gap: 1.8rem; }
 
-        /* Skill Grid */
-        .skills-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 2rem;
-        }
+    .exp-entry {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 2rem;
+    }
 
-        .skill-group h4 {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--text-muted);
-            margin-bottom: 1rem;
-        }
+    .exp-date {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--ink-mute);
+      padding-top: 0.25rem;
+      line-height: 1.5;
+    }
 
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.6rem;
-        }
+    .exp-body h3 {
+      font-family: var(--sans);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 0.2rem;
+    }
 
-        .tag {
-            background: var(--bg-subtle);
-            border: 1px solid var(--border);
-            padding: 0.4rem 0.8rem;
-            border-radius: 6px;
-            font-size: 0.8rem;
-            color: var(--text-main);
-            transition: var(--transition);
-        }
+    .exp-org {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+      margin-bottom: 0.9rem;
+    }
 
-        .tag:hover {
-            border-color: var(--accent);
-            background: #fff;
-            transform: translateY(-2px);
-        }
+    .exp-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
 
-        /* Project Cards */
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-        }
+    .exp-bullets li {
+      font-size: 0.9rem;
+      color: var(--ink-soft);
+      padding-left: 1.1rem;
+      position: relative;
+      line-height: 1.6;
+    }
 
-        .project-card {
-            background: #fff;
-            border: 1px solid var(--border);
-            padding: 2rem;
-            border-radius: 12px;
-            transition: var(--transition);
-            display: flex;
-            flex-direction: column;
-        }
+    .exp-bullets li::before {
+      content: "—";
+      position: absolute;
+      left: 0;
+      color: var(--rule);
+    }
 
-        .project-card:hover {
-            border-color: var(--accent-light);
-            box-shadow: var(--card-shadow);
-            transform: translateY(-4px);
-        }
+    /* ── SKILLS ───────────────────────────────────────────── */
+    .skills-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
 
-        .project-card h3 {
-            font-size: 1.1rem;
-            margin-bottom: 0.75rem;
-        }
+    .skills-table tr {
+      border-top: 1px solid var(--rule);
+    }
 
-        .project-card p {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            margin-bottom: 1.5rem;
-            flex-grow: 1;
-        }
+    .skills-table tr:last-child {
+      border-bottom: 1px solid var(--rule);
+    }
 
-        .project-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    .skills-table td {
+      padding: 1rem 0;
+      vertical-align: top;
+    }
 
-        .repo-link {
-            color: var(--accent);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.85rem;
-        }
+    .skills-table td:first-child {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+      width: 160px;
+      padding-right: 2rem;
+      padding-top: 1.15rem;
+    }
 
-        /* Publication Highlight */
-        .pub-box {
-            background: linear-gradient(to right, var(--bg-subtle), transparent);
-            border-left: 3px solid var(--accent);
-            padding: 2rem;
-            border-radius: 0 12px 12px 0;
-        }
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+    }
 
-        @media (max-width: 768px) {
-            .entry { grid-template-columns: 1fr; gap: 0.5rem; }
-            .project-grid { grid-template-columns: 1fr; }
-            h1 { font-size: 2.5rem; }
-            .container { padding: 2rem 1rem; }
-        }
+    .skill-tag {
+      background: var(--beige-mid);
+      border: 1px solid var(--beige-drk);
+      padding: 0.3rem 0.7rem;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--ink-soft);
+      transition: background 0.2s, border-color 0.2s;
+    }
 
-        footer {
-            text-align: center;
-            padding: 4rem 0;
-            border-top: 1px solid var(--border);
-            color: var(--text-muted);
-            font-size: 0.85rem;
-        }
-    </style>
+    .skill-tag:hover {
+      background: var(--beige-drk);
+      border-color: var(--ink-mute);
+      color: var(--ink);
+    }
+
+    /* ── PROJECTS ─────────────────────────────────────────── */
+    .project-list { display: flex; flex-direction: column; }
+
+    .project-entry {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 2rem;
+      padding: 2rem 0;
+      border-top: 1px solid var(--rule);
+      transition: background 0.2s;
+    }
+
+    .project-entry:last-child { border-bottom: 1px solid var(--rule); }
+
+    .project-num {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      color: var(--ink-mute);
+      padding-top: 0.2rem;
+    }
+
+    .project-body h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 0.5rem;
+    }
+
+    .project-body p {
+      font-size: 0.88rem;
+      color: var(--ink-soft);
+      line-height: 1.65;
+      margin-bottom: 1rem;
+    }
+
+    .project-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .p-tag {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+      background: var(--beige-mid);
+      border: 1px solid var(--rule);
+      padding: 0.2rem 0.6rem;
+    }
+
+    .p-link {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--accent);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      border-bottom: 1px solid var(--accent);
+      padding-bottom: 1px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .p-link:hover { color: var(--accent2); border-color: var(--accent2); }
+
+    /* ── PUBLICATION ──────────────────────────────────────── */
+    .pub-block {
+      border: 1px solid var(--rule);
+      padding: 2rem 2.5rem;
+      background: var(--beige-mid);
+    }
+
+    .pub-block .pub-venue {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+      margin-bottom: 0.8rem;
+    }
+
+    .pub-block h3 {
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      font-weight: 400;
+      color: var(--ink);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+
+    .pub-block .pub-authors {
+      font-size: 0.85rem;
+      color: var(--ink-mute);
+      margin-bottom: 1.2rem;
+    }
+
+    /* ── EDUCATION ────────────────────────────────────────── */
+    .edu-list { display: flex; flex-direction: column; gap: 0; }
+
+    .edu-entry {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 2rem;
+      padding: 1.8rem 0;
+      border-top: 1px solid var(--rule);
+    }
+
+    .edu-entry:last-child { border-bottom: 1px solid var(--rule); }
+
+    .edu-year {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--ink-mute);
+      padding-top: 0.2rem;
+    }
+
+    .edu-body h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 0.2rem;
+    }
+
+    .edu-body p {
+      font-size: 0.85rem;
+      color: var(--ink-mute);
+    }
+
+    /* ── FOOTER ───────────────────────────────────────────── */
+    footer {
+      padding: 3rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-copy {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      color: var(--ink-mute);
+      letter-spacing: 0.07em;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .footer-links a {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      color: var(--ink-mute);
+      text-decoration: none;
+      letter-spacing: 0.07em;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--accent); }
+
+    /* ── RESPONSIVE ───────────────────────────────────────── */
+    @media (max-width: 640px) {
+      .exp-entry,
+      .project-entry,
+      .edu-entry { grid-template-columns: 1fr; gap: 0.4rem; }
+      .exp-date, .project-num, .edu-year { padding-top: 0; }
+      .skills-table td:first-child { width: auto; display: block; padding-bottom: 0.4rem; }
+      .skills-table td { display: block; }
+      nav { flex-direction: column; align-items: flex-start; gap: 1rem; }
+      .hero { padding: 4rem 0 3rem; }
+    }
+  </style>
 </head>
 <body>
+<div class="site-wrap">
 
-    <div class="container">
-        <header>
-            <span class="profile-label">AI/ML ENGINEER & RESEARCHER</span>
-            <h1>Himanshu Dhurve</h1>
-            <p class="tagline">
-                Specializing in <b>Computer Vision</b> and <b>Large Language Models</b>. 
-                Applying a background in Aerospace Engineering to build robust, scalable ML systems. 
-                Currently researching at <b>Vizuara AI Labs</b>.
-            </p>
-            <div class="social-row">
-                <a href="https://github.com/himanshu-dhurve" class="social-link" target="_blank">GitHub</a>
-                <a href="https://linkedin.com/in/himanshu-dhurve-92057b183" class="social-link" target="_blank">LinkedIn</a>
-                <a href="mailto:himanshudhurve96@gmail.com" class="social-link">Email</a>
-            </div>
-        </header>
+  <!-- NAV -->
+  <nav>
+    <a class="nav-name" href="#">Himanshu Dhurve</a>
+    <ul class="nav-links">
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#publication">Research</a></li>
+      <li><a href="#education">Education</a></li>
+    </ul>
+  </nav>
 
-        <section class="section">
-            <div class="section-header">
-                <h2 class="section-title">Research & Experience</h2>
-                <div class="section-line"></div>
-            </div>
-            <div class="grid-list">
-                <div class="entry">
-                    <div class="entry-meta">Jan 2026 — Present</div>
-                    <div class="entry-content">
-                        <h3>AI/ML Research Intern</h3>
-                        <div class="subheading">Vizuara AI Labs, India</div>
-                        <ul class="entry-list">
-                            <li>Optimized RAG systems for technical documentation, improving retrieval accuracy from 47% to 91% using cross-encoders.</li>
-                            <li>Designed modular, multimodal pipelines supporting plug-and-play LLM backends.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="entry">
-                    <div class="entry-meta">2021 — 2023</div>
-                    <div class="entry-content">
-                        <h3>CFD Research Assistant</h3>
-                        <div class="subheading">San Diego State University, USA</div>
-                        <ul class="entry-list">
-                            <li>Reduced simulation time by 75% via HPC parallelization (SLURM).</li>
-                            <li>Co-authored research on aerodynamics for the AIAA Aviation Forum 2025.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="section-header">
-                <h2 class="section-title">Technical Proficiency</h2>
-                <div class="section-line"></div>
-            </div>
-            <div class="skills-container">
-                <div class="skill-group">
-                    <h4>Core Intelligence</h4>
-                    <div class="skill-tags">
-                        <span class="tag">PyTorch</span>
-                        <span class="tag">TensorFlow</span>
-                        <span class="tag">Computer Vision</span>
-                        <span class="tag">NLP</span>
-                    </div>
-                </div>
-                <div class="skill-group">
-                    <h4>RAG & Inference</h4>
-                    <div class="skill-tags">
-                        <span class="tag">LangChain</span>
-                        <span class="tag">ChromaDB</span>
-                        <span class="tag">FAISS</span>
-                        <span class="tag">Qwen / Gemini</span>
-                    </div>
-                </div>
-                <div class="skill-group">
-                    <h4>Engineering</h4>
-                    <div class="skill-tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">C++</span>
-                        <span class="tag">Linux/Bash</span>
-                        <span class="tag">Docker/MLOps</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="section-header">
-                <h2 class="section-title">Featured Projects</h2>
-                <div class="section-line"></div>
-            </div>
-            <div class="project-grid">
-                <div class="project-card">
-                    <h3>Student Misconception Detection</h3>
-                    <p>Fine-tuned Qwen2.5-Math using Unsloth. Achieved 0.925 MAP score on Kaggle leaderboard by implementing a custom MLP head for interpretability.</p>
-                    <div class="project-footer">
-                        <span class="tag">Fine-tuning</span>
-                        <a href="https://github.com/hdsd1007/MAP-Competition-Qwen-MLP" class="repo-link">View Repo →</a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <h3>Stable Video OCR</h3>
-                    <p>Real-time license plate recognition using YOLO11 and EasyOCR with a majority-voting buffer to eliminate text flickering in video.</p>
-                    <div class="project-footer">
-                        <span class="tag">CV</span>
-                        <a href="https://github.com/hdsd1007/License-Plate-Detection-YOLO11-and-OCR-" class="repo-link">View Repo →</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="section-header">
-                <h2 class="section-title">Education</h2>
-                <div class="section-line"></div>
-            </div>
-            <div class="grid-list">
-                <div class="entry">
-                    <div class="entry-meta">MS Aerospace Engineering</div>
-                    <div class="entry-content">
-                        <h3>San Diego State University</h3>
-                        <div class="subheading">GPA: 3.52/4.00 • Research Focus: Computational Fluid Dynamics</div>
-                    </div>
-                </div>
-                <div class="entry">
-                    <div class="entry-meta">BTech Mechanical Eng.</div>
-                    <div class="entry-content">
-                        <h3>DBATU, India</h3>
-                        <div class="subheading">GPA: 8.57/10.00 • Focus: Computational Methods</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="section-header">
-                <h2 class="section-title">Selected Publication</h2>
-                <div class="section-line"></div>
-            </div>
-            <div class="pub-box">
-                <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Effect of Surface Texture on the Lift and Drag of Small Spinning Balls</h3>
-                <p style="color: var(--text-muted); font-size: 0.9rem;">Joseph Katz, <b>Himanshu C. Dhurve</b> • AIAA Aviation Forum 2025</p>
-                <a href="https://doi.org/10.2514/6.2025-3586" class="repo-link" style="margin-top: 1rem; display: inline-block;">Read Paper →</a>
-            </div>
-        </section>
-
-        <footer>
-            <p>© 2026 Himanshu Dhurve • Built for Clarity and Impact</p>
-        </footer>
+  <!-- HERO -->
+  <header class="hero">
+    <p class="hero-label">AI / ML Engineer &amp; Researcher</p>
+    <h1>Building systems<br>at the edge of <em>intelligence.</em></h1>
+    <p class="hero-bio">
+      I work at the intersection of computer vision, reinforcement learning,
+      and applied machine learning. Background in computational fluid dynamics and
+      high-performance computing — now building ML systems that are rigorous,
+      reproducible, and grounded in real data. Currently at <strong>Vizuara AI Labs</strong>.
+    </p>
+    <div class="hero-links">
+      <a href="https://github.com/hdsd1007" class="btn btn-fill" target="_blank" rel="noopener">↗ GitHub</a>
+      <a href="https://linkedin.com/in/himanshu-dhurve-92057b183" class="btn" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="/cdn-cgi/l/email-protection#7d1514101c130e15081915080f0b18444b3d1a101c1411531e1210" class="btn">Email</a>
     </div>
-</body>
-</html>
+  </header>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <p class="sec-label">Experience</p>
+    <div class="exp-list">
+
+      <div class="exp-entry">
+        <div class="exp-date">Jan 2026<br>— Present</div>
+        <div class="exp-body">
+          <h3>AI/ML Research Intern</h3>
+          <div class="exp-org">Vizuara AI Labs · India</div>
+          <ul class="exp-bullets">
+            <li>Developed a two-stage RAG system that decomposes report-level prompts into sub-questions, retrieves and deduplicates evidence across multiple embedding-space regions, and synthesizes citation-grounded technical reports using LangChain, ChromaDB, and cross-encoder re-ranking.</li>
+            <li>Fine-tuned RF-DETR on a custom SAR image dataset, achieving mAP 0.614 competitive with published literature; diagnosed overfitting via train/val loss divergence and scoped SARDet-100K as the next data-scaling step.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-entry">
+        <div class="exp-date">Aug 2021<br>— Dec 2023</div>
+        <div class="exp-body">
+          <h3>Aerodynamics Research Assistant</h3>
+          <div class="exp-org">San Diego State University · USA</div>
+          <ul class="exp-bullets">
+            <li>Ran 3D CFD simulations on an HPC cluster (SLURM), cutting wall-time by 75% through parallelization; processed and visualized large-scale flow-field datasets using Python and ANSYS CFD-Post.</li>
+            <li>Quantified surface roughness effects through wind tunnel experiments and CFD: measured a 5° delay in flow separation and a 16% lift increase, contributing to a co-authored AIAA 2025 publication.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-entry">
+        <div class="exp-date">Jan 2020<br>— Dec 2020</div>
+        <div class="exp-body">
+          <h3>Finite Element Analyst</h3>
+          <div class="exp-org">Shirsh Technosolutions · India</div>
+          <ul class="exp-bullets">
+            <li>Performed structural and FSI FEA simulations (ANSYS Mechanical) for industrial projects including subbase tanks, car-park brackets, and a floating solar plant under static and dynamic wind load conditions.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <p class="sec-label">Technical Skills</p>
+    <table class="skills-table">
+      <tr>
+        <td>Core</td>
+        <td>
+          <div class="skill-tags">
+            <span class="skill-tag">Machine Learning</span>
+            <span class="skill-tag">Deep Learning</span>
+            <span class="skill-tag">Computer Vision</span>
+            <span class="skill-tag">NLP</span>
+            <span class="skill-tag">RAG</span>
+            <span class="skill-tag">Object Detection</span>
+            <span class="skill-tag">Image Segmentation</span>
+            <span class="skill-tag">Reinforcement Learning</span>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>Languages</td>
+        <td>
+          <div class="skill-tags">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">C++</span>
+            <span class="skill-tag">Bash / Shell</span>
+            <span class="skill-tag">MATLAB</span>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>Software</td>
+        <td>
+          <div class="skill-tags">
+            <span class="skill-tag">PyTorch</span>
+            <span class="skill-tag">TensorFlow</span>
+            <span class="skill-tag">scikit-learn</span>
+            <span class="skill-tag">Hugging Face</span>
+            <span class="skill-tag">LangChain</span>
+            <span class="skill-tag">ChromaDB</span>
+            <span class="skill-tag">OpenCV</span>
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">Linux</span>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>MLOps</td>
+        <td>
+          <div class="skill-tags">
+            <span class="skill-tag">HPC / SLURM</span>
+            <span class="skill-tag">Model Fine-tuning</span>
+            <span class="skill-tag">Evaluation Pipelines</span>
+            <span class="skill-tag">Experiment Tracking</span>
+            <span class="skill-tag">Distributed Training</span>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>Simulation</td>
+        <td>
+          <div class="skill-tags">
+            <span class="skill-tag">OpenFOAM</span>
+            <span class="skill-tag">ANSYS Fluent</span>
+            <span class="skill-tag">ANSYS Mechanical</span>
+            <span class="skill-tag">SolidWorks</span>
+            <span class="skill-tag">CATIA v5</span>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <p class="sec-label">Projects</p>
+    <div class="project-list">
+
+      <div class="project-entry">
+        <div class="project-num">01</div>
+        <div class="project-body">
+          <h3>Student Misconception Detection — MAP Kaggle</h3>
+          <p>Fine-tuned Qwen2.5-Math-1.5B-Instruct with Unsloth and a compact MLP classification head to identify student misconceptions in math reasoning responses. Improved MAP leaderboard score from 0.885 to 0.925 (+4.5%) by combining LLM semantic understanding with task-specific fine-tuning.</p>
+          <div class="project-meta">
+            <span class="p-tag">Fine-tuning</span>
+            <span class="p-tag">NLP</span>
+            <span class="p-tag">Aug – Oct 2025</span>
+            <a href="https://github.com/hdsd1007/MAP-Competition-Qwen-MLP" class="p-link" target="_blank" rel="noopener">View Repo →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-entry">
+        <div class="project-num">02</div>
+        <div class="project-body">
+          <h3>Stable Video OCR — License Plate Recognition</h3>
+          <p>Real-time license plate detection and recognition using fine-tuned YOLO11 and EasyOCR. Eliminated OCR flickering by implementing a majority-voting algorithm over a 12-frame rolling buffer, producing stable text output across video frames.</p>
+          <div class="project-meta">
+            <span class="p-tag">Computer Vision</span>
+            <span class="p-tag">YOLO11</span>
+            <span class="p-tag">Sep 2025</span>
+            <a href="https://github.com/hdsd1007/License-Plate-Detection-YOLO11-and-OCR-" class="p-link" target="_blank" rel="noopener">View Repo →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-entry">
+        <div class="project-num">03</div>
+        <div class="project-body">
+          <h3>Video Instance Segmentation — Mask R-CNN</h3>
+          <p>Implemented a video instance segmentation pipeline using PyTorch's pre-trained Mask R-CNN. Performs per-frame object detection and pixel-level segmentation, rendering per-instance colored masks and bounding boxes on video streams.</p>
+          <div class="project-meta">
+            <span class="p-tag">Segmentation</span>
+            <span class="p-tag">PyTorch</span>
+            <span class="p-tag">Sep 2025</span>
+            <a href="https://github.com/hdsd1007/Instance-Segmentation-MaskRCNN-" class="p-link" target="_blank" rel="noopener">View Repo →</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PUBLICATION -->
+  <section id="publication">
+    <p class="sec-label">Research</p>
+    <div class="pub-block">
+      <div class="pub-venue">AIAA Aviation Forum &amp; Ascend 2025</div>
+      <h3>Effect of Surface Texture on the Lift and Drag of Small Spinning Balls</h3>
+      <p class="pub-authors">Joseph Katz, <strong>Himanshu C. Dhurve</strong></p>
+      <a href="https://doi.org/10.2514/6.2025-3586" class="p-link" target="_blank" rel="noopener">Read Paper →</a>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <p class="sec-label">Education</p>
+    <div class="edu-list">
+      <div class="edu-entry">
+        <div class="edu-year">2021 – 2024</div>
+        <div class="edu-body">
+          <h3>M.S. Aerospace Engineering</h3>
+          <p>San Diego State University, USA &nbsp;·&nbsp; GPA 3.52 / 4.0</p>
+          <p style="margin-top:0.2rem; font-size:0.82rem; color:var(--ink-mute);">Recipient, Master's Research Scholarship · 2022</p>
+        </div>
+      </div>
+      <div class="edu-entry">
+        <div class="edu-year">2014 – 2018</div>
+        <div class="edu-body">
+          <h3>B.Tech Mechanical Engineering</h3>
+          <p>Dr. Babasaheb Ambedkar Technological University, India &nbsp;·&nbsp; GPA 8.57 / 10.0</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-copy">© 2026 Himanshu Dhurve</span>
+    <div class="footer-links">
+      <a href="https://github.com/hdsd1007" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://linkedin.com/in/himanshu-dhurve-92057b183" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="/cdn-cgi/l/email-protection#751d1c18141b061d00111d000703104c43351218141c195b161a18">Email</a>
+      <a href="https://arc.aiaa.org/doi/10.2514/6.
