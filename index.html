@@ -1,12 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Himanshu Dhurve</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Himanshu Dhurve - AI/ML Engineer & Researcher specializing in computer vision, NLP, RAG systems, and agentic AI. Building systems at the intersection of intelligence and engineering." />
+    <meta name="keywords" content="AI, ML, machine learning, computer vision, NLP, RAG, reinforcement learning, artificial intelligence, research" />
+    <meta property="og:title" content="Himanshu Dhurve - Research Engineer & ML Scientist" />
+    <meta property="og:description" content="Building intelligent systems with research rigor and engineering precision. Specializing in computer vision, NLP, MLOps, and agentic AI." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://hdsd1007.github.io" />
+    <meta property="og:image" content="https://hdsd1007.github.io/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Himanshu Dhurve - Research Engineer & ML Scientist" />
+    <meta name="twitter:description" content="Building intelligent systems with research rigor and engineering precision." />
+    <title>Himanshu Dhurve | Research Engineer & ML Scientist</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <style>
     :root {
@@ -15,8 +25,8 @@
       --beige-light: #faf8f3;
       --beige-drk:   #d9d0bf;
       --ink:         #1c1a17;
-      --ink-soft:    #33302b;
-      --ink-mute:    #635b52;
+      --ink-soft:    #1a1816;
+      --ink-mute:    #3d3530;
       --accent:      #2d4a3e;
       --accent2:     #7c5c3a;
       --accent-light:rgba(45,74,62,0.08);
@@ -45,6 +55,21 @@
       font-size: 16px;
       line-height: 1.75;
       -webkit-font-smoothing: antialiased;
+      position: relative;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: 
+        radial-gradient(circle at 20% 30%, rgba(45, 74, 62, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(45, 74, 62, 0.025) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(45, 74, 62, 0.015) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: -1;
     }
 
     /* ── SCROLL PROGRESS BAR ───────────────────────────────── */
@@ -52,37 +77,37 @@
       position: fixed;
       top: 0;
       left: 0;
-      height: 2px;
+      height: 3px;
       background: linear-gradient(90deg, var(--accent), var(--accent2));
       z-index: 200;
       width: 0%;
-      transition: width 0.1s linear;
+      transition: width 0.1s ease-out;
     }
 
     /* ── SCROLL ANIMATION ───────────────────────────────────── */
     .reveal {
       opacity: 0;
-      transform: translateY(32px) scale(0.98);
-      transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
-                  transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+      transform: translateY(40px);
+      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .reveal.visible { opacity: 1; transform: translateY(0) scale(1); }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
 
     .reveal-left {
       opacity: 0;
-      transform: translateX(-32px) scale(0.98);
-      transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
-                  transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+      transform: translateX(-40px);
+      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .reveal-left.visible { opacity: 1; transform: translateX(0) scale(1); }
+    .reveal-left.visible { opacity: 1; transform: translateX(0); }
 
     .reveal-right {
       opacity: 0;
-      transform: translateX(32px) scale(0.98);
-      transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
-                  transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+      transform: translateX(40px);
+      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .reveal-right.visible { opacity: 1; transform: translateX(0) scale(1); }
+    .reveal-right.visible { opacity: 1; transform: translateX(0); }
 
     /* Staggered children animation */
     .stagger-children > .reveal:nth-child(1),
@@ -90,19 +115,22 @@
     .stagger-children > .reveal-right:nth-child(1) { transition-delay: 0s; }
     .stagger-children > .reveal:nth-child(2),
     .stagger-children > .reveal-left:nth-child(2),
-    .stagger-children > .reveal-right:nth-child(2) { transition-delay: 0.08s; }
+    .stagger-children > .reveal-right:nth-child(2) { transition-delay: 0.1s; }
     .stagger-children > .reveal:nth-child(3),
     .stagger-children > .reveal-left:nth-child(3),
-    .stagger-children > .reveal-right:nth-child(3) { transition-delay: 0.16s; }
+    .stagger-children > .reveal-right:nth-child(3) { transition-delay: 0.2s; }
     .stagger-children > .reveal:nth-child(4),
     .stagger-children > .reveal-left:nth-child(4),
-    .stagger-children > .reveal-right:nth-child(4) { transition-delay: 0.24s; }
+    .stagger-children > .reveal-right:nth-child(4) { transition-delay: 0.3s; }
     .stagger-children > .reveal:nth-child(5),
     .stagger-children > .reveal-left:nth-child(5),
-    .stagger-children > .reveal-right:nth-child(5) { transition-delay: 0.32s; }
+    .stagger-children > .reveal-right:nth-child(5) { transition-delay: 0.4s; }
     .stagger-children > .reveal:nth-child(6),
     .stagger-children > .reveal-left:nth-child(6),
-    .stagger-children > .reveal-right:nth-child(6) { transition-delay: 0.40s; }
+    .stagger-children > .reveal-right:nth-child(6) { transition-delay: 0.5s; }
+    .stagger-children > .reveal:nth-child(7),
+    .stagger-children > .reveal-left:nth-child(7),
+    .stagger-children > .reveal-right:nth-child(7) { transition-delay: 0.6s; }
 
     /* ── LAYOUT ─────────────────────────────────────────────── */
     .site-wrap {
@@ -136,7 +164,7 @@
     }
     .nav-name {
       font-family: var(--mono);
-      font-size: 0.8rem;
+      font-size: 1rem;
       font-weight: 500;
       letter-spacing: 0.08em;
       text-transform: uppercase;
@@ -146,7 +174,7 @@
     .nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
     .nav-links a {
       font-family: var(--mono);
-      font-size: 0.74rem;
+      font-size: 0.85rem;
       letter-spacing: 0.07em;
       text-transform: uppercase;
       color: var(--ink-mute);
@@ -154,6 +182,7 @@
       transition: color 0.2s;
       position: relative;
     }
+    .nav-links a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 4px; }
     .nav-links a::after {
       content: '';
       position: absolute;
@@ -210,18 +239,18 @@
     .nav-hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
     /* ── HERO ───────────────────────────────────────────────── */
-    .hero {
-      font-family: 'Playfair Display', serif;
-      padding: 5rem 0 4rem;
-      display: grid;
-      grid-template-columns: 1fr 340px;
-      gap: 3rem;
-      align-items: start;
-      border-bottom: 1px solid var(--rule);
-    }
+      .hero {
+        font-family: 'Playfair Display', serif;
+        padding: 5.5rem 0 4.5rem;
+        display: grid;
+        grid-template-columns: 1fr 340px;
+        gap: 2.5rem;
+        align-items: start;
+        border-bottom: 1px solid var(--rule);
+      }
     .hero-label {
       font-family: var(--mono);
-      font-size: 0.72rem;
+      font-size: 0.9rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--ink-mute);
@@ -229,50 +258,29 @@
     }
     .hero h1 {
       font-family: var(--serif);
-      font-size: clamp(3rem, 5.5vw, 5.4rem);
+      font-size: clamp(2.5rem, 4.5vw, 3.8rem);
       font-weight: 400;
       line-height: 1.08;
       letter-spacing: -0.01em;
       color: var(--ink);
       margin-bottom: 2rem;
     }
-    .hero h1 em {
-      font-style: italic;
-      color: var(--accent);
-    }
-    .hero-bio {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
-      color: var(--ink-soft);
-      line-height: 1.8;
-      margin-bottom: 1.8rem;
-    }
-    .hero-links { display: flex; gap: 1rem; flex-wrap: wrap; }
+      .hero h1 em {
+        font-style: italic;
+        color: var(--accent);
+        font-weight: 500;
+        letter-spacing: -0.005em;
+}
+      .hero-bio {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.12rem;
+        color: var(--ink-soft);
+        line-height: 1.82;
+        margin-bottom: 0.5rem;
+      }
+      .hero-links { display: flex; gap: 1rem; flex-wrap: wrap; }
 
-    .hero-bio strong { color: var(--ink); font-weight: 600; }
-    .hero-right-label {
-      font-family: var(--mono);
-      font-size: 0.65rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--ink-mute);
-      margin-bottom: 0.7rem;
-    }
-    .hero-interest-tags { display: flex; flex-wrap: wrap; gap: 0.45rem; }
-    .interest-tag {
-      font-family: var(--mono);
-      font-size: 0.72rem;
-      padding: 0.28rem 0.7rem;
-      background: var(--beige-mid);
-      border: 1px solid var(--beige-drk);
-      border-radius: 20px;
-      color: var(--ink-soft);
-      transition: background 0.2s, color 0.2s;
-    }
-    .interest-tag:hover {
-      background: var(--accent-light);
-      color: var(--accent);
-    }
+.hero-bio strong { color: var(--ink); font-weight: 600; }
 
     /* ── BUTTONS ─────────────────────────────────────────────── */
     .btn {
@@ -289,9 +297,10 @@
       border-radius: 6px;
       color: var(--ink);
       background: transparent;
-      transition: background 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .btn:hover { background: var(--ink); color: var(--beige); box-shadow: 0 2px 8px rgba(28, 26, 23, 0.15); }
+    .btn:hover { background: var(--ink); color: var(--beige); box-shadow: 0 4px 12px rgba(28, 26, 23, 0.12); transform: translateY(-1px); }
+    .btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
     .btn:hover svg { fill: var(--beige); }
     .btn svg { width: 14px; height: 14px; fill: currentColor; transition: fill 0.2s; }
     .btn-fill { background: var(--accent); border-color: var(--accent); color: var(--beige); }
@@ -308,14 +317,14 @@
 
     /* ── SECTIONS ────────────────────────────────────────────── */
     section { padding: 3rem 0; }
-    .sec-label {
-      font-family: var(--mono);
-      font-size: 0.7rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--ink-mute);
-      margin-bottom: 1.8rem;
-    }
+      .sec-label {
+        font-family: var(--mono);
+        font-size: 0.85rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--ink-mute);
+        margin-bottom: 1.9rem;
+      }
 
     /* ── EXPERIENCE ──────────────────────────────────────────── */
     .exp-list {
@@ -366,45 +375,42 @@
     .exp-bullets li::before { content: "\00b7"; position: absolute; left: 0; color: var(--ink-mute); font-weight: bold; font-size: 1.2em; }
 
     /* ── SKILLS ──────────────────────────────────────────────── */
-    .skills-grid {
+    .skills-section {
+      display: flex;
+      flex-direction: column;
+      gap: 2.2rem;
+    }
+    .skill-row {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 140px 1fr;
       gap: 1.5rem;
+      align-items: start;
     }
-    .skill-group {
-      background: var(--beige-light);
-      border-radius: var(--radius-lg);
-      padding: 1.8rem;
-      transition: box-shadow 0.3s;
-    }
-    .skill-group:hover {
-      box-shadow: var(--shadow-sm);
-    }
-    .skill-group-label {
+    .skill-category-label {
       font-family: var(--mono);
-      font-size: 0.7rem;
-      letter-spacing: 0.1em;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--ink-mute);
-      margin-bottom: 1rem;
+      padding-top: 0.45rem;
     }
     .skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
     .skill-tag {
       display: inline-flex;
       align-items: center;
       gap: 0.35rem;
-      background: var(--beige-mid);
+      background: transparent;
       border: 1px solid var(--beige-drk);
       border-radius: 20px;
-      padding: 0.32rem 0.8rem;
+      padding: 0.38rem 0.9rem;
       font-family: var(--mono);
-      font-size: 0.75rem;
+      font-size: 0.78rem;
       color: var(--ink-soft);
-      transition: background 0.2s, border-color 0.2s, color 0.2s;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
       cursor: default;
     }
     .skill-tag svg { width: 14px; height: 14px; fill: currentColor; flex-shrink: 0; }
-    .skill-tag:hover { background: var(--accent-light); border-color: var(--accent); color: var(--accent); }
+    .skill-tag:hover { background: var(--accent-light); border-color: var(--accent); color: var(--accent); transform: translateY(-1px) scale(1.02); }
 
     /* ── PROJECTS ────────────────────────────────────────────── */
     .project-grid {
@@ -412,30 +418,50 @@
       grid-template-columns: repeat(2, 1fr);
       gap: 2rem;
     }
-    .project-card {
-      background: var(--beige-light);
-      border: 1px solid var(--rule);
-      border-radius: var(--radius-lg);
-      border-top: 3px solid transparent;
-      padding: 2rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      box-shadow: var(--shadow-sm);
-      transition: border-color 0.25s, transform 0.25s, box-shadow 0.3s;
-    }
-    .project-card:hover {
-      border-color: var(--beige-drk);
-      border-top-color: var(--accent);
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-lg);
-    }
-    .project-card-img {
-      width: 100%;
-      height: 160px;
-      object-fit: cover;
-      border-radius: var(--radius);
-      margin-bottom: 0.5rem;
+      .project-card {
+        background: var(--beige-light);
+        border: 1px solid var(--rule);
+        border-radius: var(--radius-lg);
+        border-top: 3px solid transparent;
+        padding: 1.8rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        box-shadow: var(--shadow-sm);
+        transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        position: relative;
+        overflow: hidden;
+      }
+      .project-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, var(--accent), var(--accent2));
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .project-card:hover {
+        border-color: var(--beige-drk);
+        transform: translateY(-4px) scale(1.01);
+        box-shadow: 0 12px 40px rgba(45, 74, 62, 0.15);
+      }
+      .project-card:hover::before {
+        transform: scaleX(1);
+      }
+      .project-card-img {
+        width: 100%;
+        height: 160px;
+        object-fit: cover;
+        border-radius: var(--radius);
+        margin-bottom: 0.5rem;
+        transition: transform 0.3s ease;
+      }
+    .project-card:hover .project-card-img {
+      transform: scale(1.02);
     }
     .project-num {
       font-family: var(--mono);
@@ -443,8 +469,14 @@
       color: var(--ink-mute);
       letter-spacing: 0.08em;
     }
-    .project-card h3 { font-size: 1rem; font-weight: 600; color: var(--ink); line-height: 1.4; }
-    .project-card p { font-size: 0.91rem; color: var(--ink-soft); line-height: 1.65; flex-grow: 1; }
+    .project-card h3 { 
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem; 
+      font-weight: 500; 
+      color: var(--ink); 
+      line-height: 1.35; 
+    }
+    .project-card p { font-size: 1.05rem; color: var(--ink-soft); line-height: 1.65; flex-grow: 1; }
     .project-footer {
       display: flex;
       justify-content: space-between;
@@ -456,7 +488,7 @@
     .p-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; }
     .p-tag {
       font-family: var(--mono);
-      font-size: 0.65rem;
+      font-size: 0.7rem;
       letter-spacing: 0.07em;
       text-transform: uppercase;
       color: var(--ink-mute);
@@ -665,9 +697,9 @@
       .resume-card { flex-direction: column; align-items: flex-start; }
     }
     @media (max-width: 640px) {
-      .site-wrap { padding: 0 1.2rem; }
+      .site-wrap { padding: 0 1.5rem; }
       .exp-entry, .edu-entry { grid-template-columns: 1fr; gap: 0.3rem; }
-      .project-grid { grid-template-columns: 1fr; }
+      .project-grid { grid-template-columns: 1fr; gap: 1.5rem; }
       .skills-grid { grid-template-columns: 1fr; }
       .resume-card { padding: 1.8rem; }
 
@@ -677,25 +709,26 @@
         position: fixed;
         top: 0;
         right: -100%;
-        width: 260px;
+        width: 280px;
         height: 100vh;
         background: var(--beige);
         flex-direction: column;
-        padding: 5rem 2rem 2rem;
+        padding: 5.5rem 2.5rem 2.5rem;
         gap: 1.5rem;
         box-shadow: var(--shadow-lg);
-        transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         z-index: 105;
       }
       .nav-links.nav-open { right: 0; }
-      .nav-links a { font-size: 0.85rem; }
+      .nav-links a { font-size: 0.9rem; padding: 0.8rem 0; }
       nav {
-        padding-left: 1.2rem;
-        padding-right: 1.2rem;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
       }
     }
     @media (max-width: 480px) {
-      .hero h1 { font-size: clamp(2.2rem, 8vw, 3rem); }
+      .hero h1 { font-size: clamp(2.4rem, 8vw, 3.2rem); letter-spacing: -0.015em; }
+      .hero-bio { font-size: 1.05rem; line-height: 1.75; }
       .hero-links { flex-direction: column; }
       .hero-links .btn { width: 100%; justify-content: center; }
       .hero { padding: 5rem 0 3.5rem; }
@@ -723,7 +756,7 @@
         <li><a href="#resume">Resume</a></li>
         <li><a href="#education">Education</a></li>
         <li>
-          <a href="Resume_HimanshuDhurve_AI-ML.pdf" class="nav-resume-btn" download>
+                        <a href="Resume_HimanshuDhurve_ML(6).pdf" class="nav-resume-btn" download>
             <svg viewBox="0 0 16 16"><path d="M8 12l-4-4h2.5V2h3v6H12L8 12zm-6 2h12v1.5H2V14z"/></svg>
             Resume
           </a>
@@ -737,8 +770,8 @@
   <!-- HERO -->
   <header class="hero" id="heroSection">
     <div class="hero-left reveal">
-      <p class="hero-label">AI / ML Engineer &amp; Researcher</p>
-      <h1>Building systems<br>at the edge of <em>intelligence.</em></h1>
+      <p class="hero-label">Research Engineer & ML Scientist</p>
+      <h1>Building intelligent systems with <em>research rigor & engineering precision.</em></h1>
       <div class="hero-links">
         <a href="https://github.com/hdsd1007" class="btn btn-fill" target="_blank" rel="noopener">
           <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
@@ -752,7 +785,7 @@
           <svg viewBox="0 0 16 16"><path d="M0 4l8 5 8-5v8a2 2 0 01-2 2H2a2 2 0 01-2-2V4zm16-2H0l8 5 8-5z"/></svg>
           Email
         </a>
-        <a href="Resume_HimanshuDhurve_AI-ML.pdf" class="btn btn-pill" download>
+                        <a href="Resume_HimanshuDhurve_ML(6).pdf" class="btn btn-pill" download>
           <svg viewBox="0 0 16 16"><path d="M8 12l-4-4h2.5V2h3v6H12L8 12zm-6 2h12v1.5H2V14z"/></svg>
           Resume
         </a>
@@ -760,19 +793,8 @@
     </div>
     <div class="hero-right reveal" style="transition-delay:0.15s">
       <p class="hero-bio">
-        Researcher and ML engineer at the intersection of computational science and machine learning. I build end-to-end systems across computer vision, NLP, reinforcement learning, and agentic AI. Grounded in large-scale numerical simulation and scientific computing, I bring engineering rigor to data-driven modeling. Published researcher, perpetual builder. Currently at Vizuara AI Labs.
+        Researcher and ML engineer bridging cutting-edge research and production AI systems. My work spans <strong>computer vision</strong>, <strong>NLP/LLMs</strong>, <strong>reinforcement learning</strong>, <strong>agentic AI</strong>, and <strong>MLOps</strong>—from model training to scalable deployment. Grounded in large-scale numerical simulation and scientific computing, I bring engineering rigor to data-driven modeling as a published researcher focused on building deployable intelligence.
       </p>
-      <p class="hero-right-label">Interests</p>
-      <div class="hero-interest-tags">
-        <span class="interest-tag">Computer Vision</span>
-        <span class="interest-tag">Reinforcement Learning</span>
-        <span class="interest-tag">RAG Systems</span>
-        <span class="interest-tag">Agentic AI</span>
-        <span class="interest-tag">NLP / LLMs</span>
-        <span class="interest-tag">HPC</span>
-        <span class="interest-tag">MLOps</span>
-        <span class="interest-tag">Gen AI</span>
-      </div>
     </div>
   </header>
 
@@ -829,10 +851,10 @@
       <svg class="sec-icon" viewBox="0 0 16 16"><path d="M5.854 4.854a.5.5 0 10-.708-.708l-3.5 3.5a.5.5 0 000 .708l3.5 3.5a.5.5 0 00.708-.708L2.707 8l3.147-3.146zm4.292 0a.5.5 0 01.708-.708l3.5 3.5a.5.5 0 010 .708l-3.5 3.5a.5.5 0 01-.708-.708L13.293 8l-3.147-3.146z"/></svg>
       Technical Skills
     </p>
-    <div class="skills-grid stagger-children">
+    <div class="skills-section stagger-children">
 
-      <div class="skill-group reveal">
-        <div class="skill-group-label">Core</div>
+      <div class="skill-row reveal">
+        <div class="skill-category-label">Core</div>
         <div class="skill-tags">
           <span class="skill-tag"><svg viewBox="0 0 24 24"><path d="M12 2a2 2 0 012 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 017 7h1a1 1 0 110 2h-1.07A7 7 0 0113 22h-2a7 7 0 01-6.93-6H3a1 1 0 110-2h1a7 7 0 017-7h1V5.73A2 2 0 0112 2zm-1 7a5 5 0 00-5 5 5 5 0 005 5h2a5 5 0 005-5 5 5 0 00-5-5h-2zm-1 3a2 2 0 110 4 2 2 0 010-4zm4 0a2 2 0 110 4 2 2 0 010-4z"/></svg>Machine Learning</span>
           <span class="skill-tag"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2a7.2 7.2 0 01-6-3.22c.03-1.99 4-3.08 6-3.08s5.97 1.09 6 3.08a7.2 7.2 0 01-6 3.22z"/></svg>Deep Learning</span>
@@ -845,8 +867,8 @@
         </div>
       </div>
 
-      <div class="skill-group reveal">
-        <div class="skill-group-label">Languages</div>
+      <div class="skill-row reveal">
+        <div class="skill-category-label">Languages</div>
         <div class="skill-tags">
           <span class="skill-tag"><svg viewBox="0 0 24 24"><path d="M9.585 11.692h4.328s2.432.039 2.432-2.35V5.391S16.714 3 11.757 3C6.8 3 7.043 5.016 7.043 5.016l.007 2.087h4.787v.627H5.635S3 7.422 3 12.267s2.317 4.673 2.317 4.673h1.382v-2.252s-.074-2.317 2.278-2.317zm-.282-5.006a.754.754 0 110-1.508.754.754 0 010 1.508zM14.415 12.308h-4.328s-2.432-.039-2.432 2.35v3.951S7.286 21 12.243 21c4.957 0 4.714-2.016 4.714-2.016l-.007-2.087h-4.787v-.627h6.202S21 16.578 21 11.733s-2.317-4.673-2.317-4.673h-1.382v2.252s.074 2.317-2.278 2.317zm.282 5.006a.754.754 0 110 1.508.754.754 0 010-1.508z"/></svg>Python</span>
           <span class="skill-tag"><svg viewBox="0 0 24 24"><path d="M22.394 6c-.167-.29-.398-.543-.652-.69L12.926.22c-.509-.294-1.34-.294-1.848 0L2.26 5.31c-.508.293-.923 1.013-.923 1.6v10.18c0 .294.104.62.271.91.167.29.398.543.652.69l8.816 5.09c.508.293 1.34.293 1.848 0l8.816-5.09c.254-.147.485-.4.652-.69.167-.29.27-.616.27-.91V6.91c.003-.294-.1-.62-.268-.91zM12 19.11c-3.92 0-7.109-3.19-7.109-7.11 0-3.92 3.19-7.11 7.11-7.11a7.133 7.133 0 016.156 3.553l-3.076 1.78a3.567 3.567 0 00-3.08-1.78A3.56 3.56 0 008.444 12 3.56 3.56 0 0012 15.555a3.57 3.57 0 003.08-1.778l3.078 1.78A7.135 7.135 0 0112 19.11zm7.11-6.715h-.79v.79h-.79v-.79h-.79v-.79h.79v-.79h.79v.79h.79zm2.962 0h-.79v.79h-.79v-.79h-.79v-.79h.79v-.79h.79v.79h.79z"/></svg>C++</span>
@@ -855,8 +877,8 @@
         </div>
       </div>
 
-      <div class="skill-group reveal">
-        <div class="skill-group-label">Frameworks</div>
+      <div class="skill-row reveal">
+        <div class="skill-category-label">Frameworks</div>
         <div class="skill-tags">
           <span class="skill-tag"><svg viewBox="0 0 24 24"><path d="M12.005 0L4.952 7.053a9.865 9.865 0 000 14.022 9.866 9.866 0 0014.022 0c3.984-3.9 3.986-10.205.085-14.023l-1.744 1.743c2.904 2.905 2.904 7.634 0 10.538s-7.634 2.904-10.538 0-2.904-7.634 0-10.538l4.647-4.646.582-.665zm3.568 3.899a1.327 1.327 0 00-1.327 1.327 1.327 1.327 0 001.327 1.328A1.327 1.327 0 0016.9 5.226 1.327 1.327 0 0015.573 3.9z"/></svg>PyTorch</span>
           <span class="skill-tag"><svg viewBox="0 0 24 24"><path d="M1.292 5.856L11.54 0v24l-4.095-2.378V7.603l-6.168 3.564.015-5.31zm21.43 5.311l-.014-5.31L12.46 0v24l4.095-2.378V14.87l3.092 1.788-.018-4.618-3.074-1.756V7.603l6.168 3.564z"/></svg>TensorFlow</span>
@@ -869,8 +891,8 @@
         </div>
       </div>
 
-      <div class="skill-group reveal">
-        <div class="skill-group-label">MLOps &amp; Infra</div>
+      <div class="skill-row reveal">
+        <div class="skill-category-label">MLOps &amp; Infra</div>
         <div class="skill-tags">
           <span class="skill-tag"><svg viewBox="0 0 24 24"><path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/></svg>MLflow</span>
           <span class="skill-tag"><svg viewBox="0 0 24 24"><path d="M.95 14.184L12 20.403l9.919-5.55v2.21L12 22.662l-10.484-5.96-.565.308v.77L12 24l11.05-6.218v-4.317l-.515-.309L12 19.118l-9.867-5.653v-2.21L12 16.805l11.05-6.218V6.32l-.515-.308L12 11.974 2.647 6.681 12 1.388l7.76 4.368.668-.411v-.566L12 0 .95 6.27v.72L12 13.207l9.919-5.55v2.26L12 15.52 1.516 9.56l-.565.308z"/></svg>Databricks</span>
@@ -882,8 +904,8 @@
         </div>
       </div>
 
-      <div class="skill-group reveal" style="grid-column: 1 / -1;">
-        <div class="skill-group-label">Simulation</div>
+      <div class="skill-row reveal">
+        <div class="skill-category-label">Simulation</div>
         <div class="skill-tags">
           <span class="skill-tag"><svg viewBox="0 0 24 24"><path d="M17 16l-4-4V8.82C14.16 8.4 15 7.3 15 6c0-1.66-1.34-3-3-3S9 4.34 9 6c0 1.3.84 2.4 2 2.82V12l-4 4H3v5h5v-3.05l4-4.2 4 4.2V21h5v-5h-4z"/></svg>OpenFOAM</span>
           <span class="skill-tag"><svg viewBox="0 0 24 24"><path d="M12 2l-5.5 9h11L12 2zm0 3.84L13.93 9h-3.86L12 5.84zM17.5 13c-2.49 0-4.5 2.01-4.5 4.5s2.01 4.5 4.5 4.5 4.5-2.01 4.5-4.5-2.01-4.5-4.5-4.5zm0 7a2.5 2.5 0 010-5 2.5 2.5 0 010 5zM3 21.5h8v-8H3v8zm2-6h4v4H5v-4z"/></svg>ANSYS Fluent</span>
@@ -905,10 +927,25 @@
     <div class="project-grid stagger-children">
 
       <div class="project-card reveal">
-        <img src="openfoam_rag.png" alt="OpenFOAM RAG" class="project-card-img" />
         <div class="project-num">01</div>
+        <h3>Customer Churn: End-to-End ML Pipeline</h3>
+        <p>Production ML pipeline for customer churn prediction with model versioning, automated retraining, and inference API using MLflow, FastAPI, and Docker.</p>
+        <div class="project-footer">
+          <div class="p-tags"><span class="p-tag">MLOps</span><span class="p-tag">MLflow</span></div>
+          <div class="p-links">
+            <a href="https://github.com/hdsd1007/customer-churn" class="p-link" target="_blank" rel="noopener">
+              <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+              Repo
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <img src="openfoam_rag.png" alt="OpenFOAM RAG" class="project-card-img" />
+        <div class="project-num">02</div>
         <h3>OpenFOAM RAG: Citation-Grounded Q&amp;A</h3>
-        <p>Two-stage RAG pipeline that decomposes queries into sub-questions, retrieves from OpenFOAM documentation, and generates citation-grounded answers. Achieved 5.0/5.0 citation accuracy. ACL 2026 workshop paper submitted.</p>
+        <p>Two-stage RAG pipeline that decomposes queries into sub-questions, retrieves from OpenFOAM documentation, and generates citation-grounded answers. Published at RAG4Report Workshop @ ACL 2026.</p>
         <div class="project-footer">
           <div class="p-tags"><span class="p-tag">RAG</span><span class="p-tag">LangChain</span></div>
           <div class="p-links">
@@ -926,7 +963,7 @@
 
       <div class="project-card reveal">
         <img src="Paperdigest.png" alt="PaperDigest screenshot" class="project-card-img" />
-        <div class="project-num">02</div>
+        <div class="project-num">03</div>
         <h3>PaperDigest: Agentic PDF-to-Digest</h3>
         <p>Agentic system that ingests academic PDFs, extracts structured content, and generates concise digests using FastAPI and Gemini. Automated pipeline from upload to summary with key-finding extraction.</p>
         <div class="project-footer">
@@ -941,7 +978,7 @@
       </div>
 
       <div class="project-card reveal">
-        <div class="project-num">03</div>
+        <div class="project-num">04</div>
         <h3>SAR Aircraft Detection (RF-DETR)</h3>
         <p>Fine-tuned RF-DETR on synthetic aperture radar imagery for aircraft detection. Achieved mAP 0.614, competitive with published benchmarks. Diagnosed overfitting and scoped SARDet-100K for data scaling.</p>
         <div class="project-footer">
@@ -956,7 +993,7 @@
       </div>
 
       <div class="project-card reveal">
-        <div class="project-num">04</div>
+        <div class="project-num">05</div>
         <h3>Student Misconception Detection</h3>
         <p>Fine-tuned Qwen2.5-Math-1.5B-Instruct with Unsloth and a compact MLP classification head to identify student misconceptions in math reasoning. Improved MAP leaderboard from 0.885 to 0.925 (+4.5%).</p>
         <div class="project-footer">
@@ -971,7 +1008,7 @@
       </div>
 
       <div class="project-card reveal">
-        <div class="project-num">05</div>
+        <div class="project-num">06</div>
         <h3>Stable Video OCR: License Plate Recognition</h3>
         <p>Real-time detection using fine-tuned YOLO11 + EasyOCR. Eliminated flickering via a majority-voting algorithm over a 12-frame rolling buffer, producing stable text output across video frames.</p>
         <div class="project-footer">
@@ -986,7 +1023,7 @@
       </div>
 
       <div class="project-card reveal">
-        <div class="project-num">06</div>
+        <div class="project-num">07</div>
         <h3>Video Instance Segmentation: Mask R-CNN</h3>
         <p>Per-frame object detection and pixel-level segmentation pipeline using PyTorch's pre-trained Mask R-CNN. Renders per-instance colored masks and bounding boxes on live video streams.</p>
         <div class="project-footer">
@@ -1012,7 +1049,7 @@
 
     <div class="pub-block reveal">
       <div>
-        <div class="pub-venue">RAG4Report Workshop @ ACL 2026 <span class="pub-badge pub-badge-review">Under Review</span></div>
+        <div class="pub-venue">RAG4Report Workshop @ ACL 2026 <span class="pub-badge pub-badge-published">Accepted</span></div>
         <h3>Decompose, Retrieve, Cite: A RAG Pipeline for Structured Report Generation from Technical Documentation</h3>
         <p class="pub-authors"><strong>Himanshu C. Dhurve</strong>, et al.</p>
       </div>
@@ -1038,14 +1075,14 @@
       <div class="resume-info">
         <h3>Himanshu Dhurve</h3>
         <p>AI/ML Engineer &amp; Researcher</p>
-        <span class="resume-updated">Last updated: March 2026</span>
+        <span class="resume-updated">Version 6.0 · March 2026</span>
       </div>
       <div class="resume-actions">
-        <a href="Resume_HimanshuDhurve_AI-ML.pdf" class="btn btn-fill btn-pill" download>
+        <a href="Resume_HimanshuDhurve_ML(6).pdf" class="btn btn-fill btn-pill" download>
           <svg viewBox="0 0 16 16"><path d="M8 12l-4-4h2.5V2h3v6H12L8 12zm-6 2h12v1.5H2V14z"/></svg>
           Download PDF
         </a>
-        <a href="Resume_HimanshuDhurve_AI-ML.pdf" class="btn btn-pill" target="_blank" rel="noopener">
+        <a href="Resume_HimanshuDhurve_ML(6).pdf" class="btn btn-pill" target="_blank" rel="noopener">
           <svg viewBox="0 0 16 16"><path d="M1 8s3-5.5 7-5.5S15 8 15 8s-3 5.5-7 5.5S1 8 1 8zm7 3.5a3.5 3.5 0 100-7 3.5 3.5 0 000 7zM8 9.5a1.5 1.5 0 110-3 1.5 1.5 0 010 3z"/></svg>
           View
         </a>
