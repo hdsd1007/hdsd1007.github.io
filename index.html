@@ -245,10 +245,10 @@
 
   <section id="about">
     <p>
-      AI safety researcher focused on understanding the internal mechanisms of large language models. My work investigates how safety-critical concepts—such as refusal—are structurally encoded in neural representations, and whether current methods of steering or suppressing model behavior are truly reliable. I approach these questions through the lens of <strong>mechanistic interpretability</strong> and <strong>neural geometry</strong>, aiming to build alignment research on a rigorous empirical foundation.
+      AI safety researcher investigating how large language models internally represent safety-critical concepts. I want to understand whether alignment techniques genuinely shape model internals or simply produce surface-level behavior, and how <strong>mechanistic interpretability</strong> can help us build more robust safeguards.
     </p>
     <p>
-      Completed the <strong>Bluedot Impact Technical AI Safety Course</strong> (2026), a rigorous program covering interpretability, scalable oversight, and alignment theory. Currently working on the <strong>project sprint</strong>, applying mechanistic interpretability techniques to understand refusal mechanisms in aligned language models.
+      Completed the <strong>Bluedot Impact Technical AI Safety Course</strong> (2026) and the <strong>project sprint</strong>, replicating and extending refusal directionality findings in Llama-3.1-8B-Instruct. <a href="https://medium.com/@himanshudhurve96/what-happens-inside-a-model-when-it-refuses-you-12af60c0e818">Read the write-up</a>.
     </p>
     <p>
       <a href="https://github.com/hdsd1007">GitHub</a>&ensp;·&ensp;<a href="https://linkedin.com/in/himanshu-dhurve-92057b183">LinkedIn</a>&ensp;·&ensp;<a href="mailto:himanshudhurve96@gmail.com">Email</a>
@@ -259,11 +259,11 @@
     <h2>Experience</h2>
 
     <p><strong>AI/ML Research Intern</strong><br />
-    Vizuara AI Labs · India · Jan 2026 – Present</p>
+    Vizuara AI Labs · India · Jan 2026 – Mar 2026</p>
     <ul>
-      <li>Developed a two-stage RAG system that decomposes report-level prompts into sub-questions, retrieves and deduplicates evidence across multiple embedding-space regions, and synthesizes citation-grounded technical reports using LangChain, ChromaDB, and cross-encoder re-ranking.</li>
-      <li>Fine-tuned RF-DETR on a custom SAR image dataset, achieving mAP 0.614 competitive with published literature; diagnosed overfitting via train/val loss divergence and scoped SARDet-100K as the next data-scaling step.</li>
-      <li>Built an AI agentic pipeline that converts any research paper PDF into a 15-minute digest, autonomously generating narrative summaries, AI-illustrated diagrams, key tables, and a companion Jupyter notebook.</li>
+      <li>Built and evaluated a citation-grounded RAG system for OpenFOAM technical documentation using hierarchical chunking, dense retrieval, and cross-encoder reranking; achieved <strong>4.6/5</strong> overall generation quality and <strong>5.0/5</strong> citation correctness. Accepted at ACL 2026 RAG4Report Workshop.</li>
+      <li>Fine-tuned RF-DETR for multi-class SAR object detection on a custom dataset, achieving <strong>0.614 mAP</strong> and improving detection robustness across heterogeneous scene categories.</li>
+      <li>Developed an agentic VLM pipeline that transforms research PDFs into structured technical digests by generating narrative summaries, AI-generated diagrams, and executable Jupyter notebooks through automated multimodal reasoning workflows.</li>
     </ul>
 
     <p><strong>Aerodynamics Research Assistant</strong><br />
@@ -273,18 +273,13 @@
       <li>Quantified surface roughness effects through wind tunnel experiments and CFD: measured a 5&deg; delay in flow separation and a 16% lift increase, contributing to a co-authored AIAA 2025 publication.</li>
     </ul>
 
-    <p><strong>Finite Element Analyst</strong><br />
-    Shirsh Technosolutions · India · Jan 2020 – Dec 2020</p>
-    <ul>
-      <li>Performed structural and FSI FEA simulations (ANSYS Mechanical) for industrial projects including subbase tanks, car-park brackets, and a floating solar plant under static and dynamic wind load conditions.</li>
-    </ul>
   </section>
 
   <section id="skills">
     <h2>Skills</h2>
 
     <p><strong>Core ML/AI</strong><br />
-    Machine Learning, Deep Learning, Computer Vision, NLP, Reinforcement Learning, RAG, Object Detection, Image Segmentation</p>
+    Mechanistic Interpretability, LLM Evaluation &amp; Benchmarking, Post-Training Alignment, Machine Learning, Deep Learning, Computer Vision, NLP, Reinforcement Learning, RAG, Object Detection, Image Segmentation</p>
 
     <p><strong>Languages</strong><br />
     Python, C++, Bash/Shell, MATLAB</p>
@@ -294,13 +289,16 @@
 
     <p><strong>MLOps &amp; Infrastructure</strong><br />
     MLflow, Databricks, Docker, Git, Weights &amp; Biases, HPC/SLURM</p>
-
-    <p><strong>Simulation</strong><br />
-    OpenFOAM, ANSYS Fluent, ANSYS Mechanical, SolidWorks, CATIA v5</p>
   </section>
 
   <section id="projects">
     <h2>Projects</h2>
+
+    <p>
+      <strong>Geometry of Refusal: Mechanistic Interpretability of Safety-Relevant Representations</strong><br />
+      Replicated and extended Arditi et al. (2024) on Llama-3.1-8B-Instruct. Extracted per-layer DIM refusal directions across 32 layers; layer 12 was the strongest. Both single-direction and per-layer ablation achieved <strong>100% flip rate</strong> on training prompts (0/150 random baseline). On JailbreakBench (n=100), true ASR was <strong>100%</strong> with coherence intact across all conditions. Applying layer 12's direction across all layers dropped refusal score to <strong>-3.67</strong>; skipping it matched per-layer (<strong>-0.96</strong>), confirming refusal is distributed. Activation addition on harmless prompts pushed refusal score <strong>9x</strong> (1.48 &rarr; 13.46). Bluedot Impact AI Safety project sprint.<br />
+      <a href="https://medium.com/@himanshudhurve96/what-happens-inside-a-model-when-it-refuses-you-12af60c0e818">Blog</a>
+    </p>
 
     <p>
       <strong>Customer Churn: End-to-End ML Pipeline</strong><br />
@@ -310,7 +308,7 @@
 
     <p>
       <strong>OpenFOAM RAG: Citation-Grounded Q&amp;A</strong><br />
-      Two-stage RAG pipeline that decomposes queries into sub-questions, retrieves from OpenFOAM documentation, and generates citation-grounded answers. Published at RAG4Report Workshop @ ACL 2026.<br />
+      Citation-grounded RAG system for OpenFOAM technical documentation using hierarchical chunking, dense retrieval, and cross-encoder reranking. Achieved <strong>4.6/5</strong> generation quality and <strong>5.0/5</strong> citation correctness. Published at RAG4Report Workshop @ ACL 2026.<br />
       <a href="https://github.com/hdsd1007/openfoam-rag">Repo</a>&ensp;·&ensp;<a href="https://openfoam-ai-guide.lovable.app">Live</a>
     </p>
 
@@ -364,7 +362,7 @@
 
   <section id="resume">
     <h2>Resume</h2>
-    <p><a href="Resume_HimanshuDhurve_Mats.pdf" download>Download PDF</a>&ensp;·&ensp;<a href="Resume_HimanshuDhurve_Mats.pdf" target="_blank">View</a></p>
+    <p><a href="Resume_HimanshuDhurve_AISafety.pdf" download>Download PDF</a>&ensp;·&ensp;<a href="Resume_HimanshuDhurve_AISafety.pdf" target="_blank">View</a></p>
   </section>
 
   <section id="education">
